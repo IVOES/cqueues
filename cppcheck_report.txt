@@ -1,0 +1,365 @@
+src/cqueues.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 44 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/cqueues.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+src/dns.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 37 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/dns.c:1302:71: warning: Either the condition 'i<(sizeof(resconf->search)/sizeof(*resconf->search))' is redundant or the array 'resconf->search[4][256]' is accessed at index 127, which is out of bounds. [arrayIndexOutOfBoundsCond]
+ for (unsigned i = 0; i < countof(resconf->search) && *resconf->search[i]; i++) {
+                                                                      ^
+src/dns.c:1302:25: note: Assuming that condition 'i<(sizeof(resconf->search)/sizeof(*resconf->search))' is not redundant
+ for (unsigned i = 0; i < countof(resconf->search) && *resconf->search[i]; i++) {
+                        ^
+src/dns.c:1302:71: note: Array index out of bounds
+ for (unsigned i = 0; i < countof(resconf->search) && *resconf->search[i]; i++) {
+                                                                      ^
+src/dns.c:2394:12: style: Opposite expression on both sides of '%'. [oppositeExpression]
+  min = -n % n;
+           ^
+src/dns.c:712:11: style: The scope of the variable 'i' can be reduced. [variableScope]
+ unsigned i;
+          ^
+src/dns.c:1278:7: style: The scope of the variable 'error' can be reduced. [variableScope]
+  int error;
+      ^
+src/dns.c:1914:46: style: The scope of the variable 'ns' can be reduced. [variableScope]
+ const char *zone = luaL_checkstring(L, 2), *ns;
+                                             ^
+src/lib/dns.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 35 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/lib/dns.c:4354:25: error: AST broken, ternary operator missing operand(s) [internalAstError]
+ struct dns_packet *P = dns_p_new(512);
+                        ^
+src/lib/dns.c:801:0: information: Skipping configuration 'AF_UNIX' since the value of 'AF_UNIX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  [AF_UNIX] = sizeof (struct sockaddr_un),
+^
+src/lib/dns.c:862:0: information: Skipping configuration 'AF_UNIX' since the value of 'AF_UNIX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ case AF_UNIX: {
+^
+src/lib/dns.c:922:0: information: Skipping configuration 'AF_UNIX' since the value of 'AF_UNIX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ case AF_UNIX: {
+^
+src/lib/dns.c:4005:0: information: Skipping configuration 'DNS_GNUC_PREREQ=0;static_assert' since the value of 'static_assert' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ dns_static_assert(dns_same_type(any->txt, any->rdata, 1), "unexpected rdata type");
+^
+src/lib/dns.c:4011:0: information: Skipping configuration 'DNS_GNUC_PREREQ=0;static_assert' since the value of 'static_assert' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ dns_static_assert(dns_same_type(any->txt, any->rdata, 1), "unexpected rdata type");
+^
+src/lib/dns.c:8039:0: information: Skipping configuration 'DNS_GNUC_PREREQ=0;static_assert' since the value of 'static_assert' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ dns_static_assert(dns_same_type(unsigned long, DNS_AI_AF2INDEX(1), 1), "internal type mismatch");
+^
+src/lib/dns.c:8040:0: information: Skipping configuration 'DNS_GNUC_PREREQ=0;static_assert' since the value of 'static_assert' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ dns_static_assert(dns_same_type(unsigned long, ((struct dns_addrinfo *)0)->af.todo, 1), "internal type mismatch");
+^
+src/lib/dns.c:8062:0: information: Skipping configuration 'DNS_GNUC_PREREQ=0;static_assert' since the value of 'static_assert' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ dns_static_assert(AF_UNSPEC == 0, "AF_UNSPEC constant not 0");
+^
+src/lib/dns.c:8063:0: information: Skipping configuration 'DNS_GNUC_PREREQ=0;static_assert' since the value of 'static_assert' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ dns_static_assert(AF_INET <= DNS_AI_AFMAX, "AF_INET constant too large");
+^
+src/lib/dns.c:8064:0: information: Skipping configuration 'DNS_GNUC_PREREQ=0;static_assert' since the value of 'static_assert' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ dns_static_assert(AF_INET6 <= DNS_AI_AFMAX, "AF_INET6 constant too large");
+^
+src/lib/dns.c:9673:0: information: Skipping configuration 'DNS_MAIN;MSG_WAITALL' since the value of 'MSG_WAITALL' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  int rflags = MSG_WAITALL;
+^
+src/lib/kpoll.c:170:12: error: syntax error [syntaxError]
+ LIST_HEAD(, kpollfd) pending;
+           ^
+src/lib/notify.c:427:12: error: syntax error [syntaxError]
+ LIST_HEAD(, file) dormant;
+           ^
+src/lib/notify.c:280:0: information: Skipping configuration 'O_CLOEXEC' since the value of 'O_CLOEXEC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  flags |= O_CLOEXEC;
+^
+src/lib/notify.c:294:0: information: Skipping configuration 'O_CLOEXEC' since the value of 'O_CLOEXEC' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (-1 == (wd = open(".", O_RDONLY|O_CLOEXEC)))
+^
+src/lib/notify.c:284:0: information: Skipping configuration 'O_DIRECTORY' since the value of 'O_DIRECTORY' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  flags |= O_DIRECTORY;
+^
+src/lib/socket.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 46 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/lib/socket.h:424:24: style: The scope of the variable 'n' can be reduced. [variableScope]
+ long d = 1000000000L, n = 0, r;
+                       ^
+src/lib/socket.h:424:31: style: The scope of the variable 'r' can be reduced. [variableScope]
+ long d = 1000000000L, n = 0, r;
+                              ^
+src/lib/socket.c:1555:28: style: Local variable 'peer' shadows outer variable [shadowVariable]
+   struct sockaddr_storage peer;
+                           ^
+src/lib/socket.c:1537:8: note: Shadowed declaration
+ X509 *peer;
+       ^
+src/lib/socket.c:1555:28: note: Shadow variable
+   struct sockaddr_storage peer;
+                           ^
+src/lib/socket.c:2591:14: style: Local variable 'bio_methods' shadows outer variable [shadowVariable]
+ BIO_METHOD *bio_methods = so_get_bio_methods();
+             ^
+src/lib/socket.c:2543:19: note: Shadowed declaration
+static BIO_METHOD bio_methods = {
+                  ^
+src/lib/socket.c:2591:14: note: Shadow variable
+ BIO_METHOD *bio_methods = so_get_bio_methods();
+             ^
+src/lib/socket.c:1331:7: style: struct member 'Anonymous24::ncalls' is never used. [unusedStructMember]
+  int ncalls;
+      ^
+src/lib/socket.c:549:13: style: Variable 'code' is assigned a value that is never used. [unreadVariable]
+  if ((code = ERR_peek_last_error()))
+            ^
+src/lib/socket.h:302:0: information: Skipping configuration 'AF_UNIX' since the value of 'AF_UNIX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ case AF_UNIX:
+^
+src/lib/socket.h:340:0: information: Skipping configuration 'AF_UNIX' since the value of 'AF_UNIX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ case AF_UNIX:
+^
+src/lib/socket.h:361:0: information: Skipping configuration 'AF_UNIX' since the value of 'AF_UNIX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ case AF_UNIX:
+^
+src/lib/socket.c:592:0: information: Skipping configuration 'AF_UNIX' since the value of 'AF_UNIX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ case AF_UNIX:
+^
+src/lib/socket.c:831:0: information: Skipping configuration 'AF_UNIX' since the value of 'AF_UNIX' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ if (*sa_family(arg) == AF_UNIX) {
+^
+src/lib/socket.c:985:0: information: Skipping configuration 'F_GETNOSIGPIPE;F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ int flags, mask = (nosigpipe)? ~0 : (~O_NOSIGPIPE);
+^
+src/lib/socket.c:988:0: information: Skipping configuration 'F_GETNOSIGPIPE;F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ ||  -1 == fcntl(fd, F_SETFL, mask & (flags | O_NOSIGPIPE)))
+^
+src/lib/socket.c:1139:0: information: Skipping configuration 'F_GETNOSIGPIPE;F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (getfl != -1 && (getfl & O_NOSIGPIPE))
+^
+src/lib/socket.c:1142:0: information: Skipping configuration 'F_GETNOSIGPIPE;F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (getfl & O_NOSIGPIPE)
+^
+src/lib/socket.c:985:0: information: Skipping configuration 'F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ int flags, mask = (nosigpipe)? ~0 : (~O_NOSIGPIPE);
+^
+src/lib/socket.c:988:0: information: Skipping configuration 'F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ ||  -1 == fcntl(fd, F_SETFL, mask & (flags | O_NOSIGPIPE)))
+^
+src/lib/socket.c:1139:0: information: Skipping configuration 'F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (getfl != -1 && (getfl & O_NOSIGPIPE))
+^
+src/lib/socket.c:1142:0: information: Skipping configuration 'F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (getfl & O_NOSIGPIPE)
+^
+src/lib/socket.c:985:0: information: Skipping configuration 'F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE;O_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ int flags, mask = (nosigpipe)? ~0 : (~O_NOSIGPIPE);
+^
+src/lib/socket.c:988:0: information: Skipping configuration 'F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE;O_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ ||  -1 == fcntl(fd, F_SETFL, mask & (flags | O_NOSIGPIPE)))
+^
+src/lib/socket.c:1139:0: information: Skipping configuration 'F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE;O_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (getfl != -1 && (getfl & O_NOSIGPIPE))
+^
+src/lib/socket.c:1142:0: information: Skipping configuration 'F_GETNOSIGPIPE;O_NOSIGPIPE;SO_NOSIGPIPE;O_NOSIGPIPE' since the value of 'O_NOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (getfl & O_NOSIGPIPE)
+^
+src/lib/socket.c:993:0: information: Skipping configuration 'F_SETNOSIGPIPE' since the value of 'F_SETNOSIGPIPE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ if (0 != fcntl(fd, F_SETNOSIGPIPE, nosigpipe))
+^
+src/notify.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/notify.c:186:6: style: The scope of the variable 'flag' can be reduced. [variableScope]
+ int flag, count = 0;
+     ^
+src/notify.c:187:14: style: The scope of the variable 'name' can be reduced. [variableScope]
+ const char *name;
+             ^
+src/notify.c:206:6: style: The scope of the variable 'flag' can be reduced. [variableScope]
+ int flag;
+     ^
+src/signal.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 38 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/signal.c:195:31: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+  if (!!sigismember(a, signo) ^ !!sigismember(b, signo))
+                              ^
+src/socket.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 47 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/socket.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+src/thread.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 35 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/thread.c:708:6: style: The scope of the variable 'error' can be reduced. [variableScope]
+ int error;
+     ^
+src/thread.c:380:27: style: Local variable 'arg' shadows outer argument [shadowArgument]
+ for (struct cthread_arg *arg = &ct->tmp.arg[1]; arg < &ct->tmp.arg[ct->tmp.argc]; arg++) {
+                          ^
+src/thread.c:302:29: note: Shadowed declaration
+static void *ct_enter(void *arg) {
+                            ^
+src/thread.c:380:27: note: Shadow variable
+ for (struct cthread_arg *arg = &ct->tmp.arg[1]; arg < &ct->tmp.arg[ct->tmp.argc]; arg++) {
+                          ^
+src/thread.c:546:10: style: Variable 'progress' is assigned a value that is never used. [unreadVariable]
+ progress++;
+         ^
+util/tcp-urgent.c:295:0: information: Skipping configuration 'BSD;EVFILT_EXCEPT' since the value of 'EVFILT_EXCEPT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  EV_SET(ep, fd, EVFILT_EXCEPT, EV_ADD|EV_ONESHOT, NOTE_OOB, 0, 0);
+^
+util/tcp-urgent.c:322:0: information: Skipping configuration 'BSD;EVFILT_EXCEPT' since the value of 'EVFILT_EXCEPT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  } else if (event[i].filter == EVFILT_EXCEPT) {
+^
+util/tcp-urgent.c:277:0: information: Skipping configuration 'BSD;EV_OOBAND' since the value of 'EV_OOBAND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   flags |= EV_OOBAND;
+^
+util/tcp-urgent.c:313:0: information: Skipping configuration 'BSD;EV_OOBAND' since the value of 'EV_OOBAND' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+   if (event[i].flags & EV_OOBAND)
+^
+vendor/compat53/c-api/compat-5.3.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 19 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+vendor/compat53/c-api/compat-5.3.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+vendor/compat53/lbitlib.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 30 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+vendor/compat53/lbitlib.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+vendor/compat53/lstrlib.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+vendor/compat53/lstrlib.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+vendor/compat53/ltablib.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 30 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+vendor/compat53/ltablib.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+vendor/compat53/lutf8lib.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 27 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+vendor/compat53/lutf8lib.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+vendor/compat53/tests/testmod.c:77:12: warning: Size of pointer 'p' used instead of size of its data. [pointerSize]
+    memcpy(p, s, len > LUA_EXTRASPACE-1 ? LUA_EXTRASPACE-1 : len+1);
+           ^
+src/thread.c:222:0: style: The function 'libs_LLRB_MAX' is never used. [unusedFunction]
+
+^
+src/dns.c:2416:0: style: The function 'luaopen__cqueues_dns' is never used. [unusedFunction]
+
+^
+src/dns.c:740:0: style: The function 'luaopen__cqueues_dns_record' is never used. [unusedFunction]
+
+^
+src/dns.c:2355:0: style: The function 'luaopen__cqueues_dns_resolver' is never used. [unusedFunction]
+
+^
+vendor/compat53/tests/testmod.c:359:0: style: The function 'luaopen_testmod' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:670:0: style: The function 'sa_egress' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2121:0: style: The function 'so_accept' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2290:0: style: The function 'so_checktls' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2931:0: style: The function 'so_clear' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2101:0: style: The function 'so_connect' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:1987:0: style: The function 'so_dial' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2937:0: style: The function 'so_events' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2063:0: style: The function 'so_family' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2022:0: style: The function 'so_fdopen' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2738:0: style: The function 'so_peek' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:3074:0: style: The function 'so_peereid' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:3012:0: style: The function 'so_peerfd' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:3092:0: style: The function 'so_peerpid' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2967:0: style: The function 'so_poll' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2620:0: style: The function 'so_read' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2858:0: style: The function 'so_recvmsg' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2088:0: style: The function 'so_remoteaddr' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2809:0: style: The function 'so_sendmsg' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2295:0: style: The function 'so_shutdown' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2190:0: style: The function 'so_starttls' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2926:0: style: The function 'so_stat' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:484:0: style: The function 'so_strerror' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:3017:0: style: The function 'so_uncork' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:2677:0: style: The function 'so_write' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:3115:0: style: The function 'socket_init' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:80:0: style: The function 'socket_v_abi' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:85:0: style: The function 'socket_v_api' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:75:0: style: The function 'socket_v_rel' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:70:0: style: The function 'socket_vendor' is never used. [unusedFunction]
+
+^
+src/lib/socket.c:1221:0: style: The function 'thr_sigmask' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
